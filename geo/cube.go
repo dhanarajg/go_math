@@ -1,6 +1,12 @@
 package geo
 
-func CubeVolume(n int) int {
+import "errors"
 
-	return n * n * n
+func CubeVolume(n int) (int, error) {
+
+	if n == 0 {
+		return 0, errors.New("Zero cant be")
+	} else {
+		return n * n * n, nil
+	}
 }
